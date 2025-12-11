@@ -12,6 +12,13 @@ const skills = [
     description: "Data analysis, ML/AI, automation scripts",
   },
   {
+    name: "Linux Expert",
+    level: 80,
+    icon: Terminal,
+    category: "Systems",
+    description: "Command line, shell scripting, open source advocacy",
+  },
+  {
     name: "UI/UX Design",
     level: 75,
     icon: Palette,
@@ -36,15 +43,8 @@ const skills = [
     name: "Git & GitHub",
     level: 75,
     icon: GitBranch,
-    category: "Tools",
-    description: "Version control and collaboration",
-  },
-  {
-    name: "Machine Learning",
-    level: 65,
-    icon: Terminal,
-    category: "AI",
-    description: "Building intelligent models",
+    category: "Open Source",
+    description: "Version control, collaboration, contributing to FOSS",
   },
 ];
 
@@ -72,7 +72,7 @@ const SkillsSection = () => {
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
             A growing toolkit of technologies and methodologies that I'm mastering 
-            to build innovative solutions.
+            to build innovative solutions. Passionate about open source and the Linux ecosystem.
           </p>
         </motion.div>
 
@@ -125,16 +125,31 @@ const SkillsSection = () => {
           ))}
         </div>
 
+        {/* Open Source Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="mt-12 p-6 glass rounded-xl text-center"
+        >
+          <h3 className="font-display text-xl font-semibold mb-2 text-foreground">
+            🐧 Open Source Advocate
+          </h3>
+          <p className="text-muted-foreground">
+            Believing in the power of community-driven development. Open source isn't just code—it's a movement that democratizes technology and fosters innovation.
+          </p>
+        </motion.div>
+
         {/* Additional Skills Tags */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="mt-16 text-center"
+          className="mt-12 text-center"
         >
           <p className="text-muted-foreground mb-6">Also exploring:</p>
           <div className="flex flex-wrap justify-center gap-3">
-            {["TensorFlow", "Neural Networks", "NLP", "Computer Vision", "APIs", "SQL", "NumPy", "Pandas"].map((tech, index) => (
+            {["TensorFlow", "Neural Networks", "NLP", "Computer Vision", "APIs", "SQL", "NumPy", "Pandas", "Bash", "Vim"].map((tech, index) => (
               <motion.span
                 key={tech}
                 initial={{ opacity: 0, scale: 0.8 }}

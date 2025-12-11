@@ -1,21 +1,21 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Github, Lock, Bot, Sparkles } from "lucide-react";
+import { Lock, Bot, Sparkles } from "lucide-react";
 
 const projects = [
   {
     title: "Crystal-Based Auth System",
-    description: "A secure authentication system built from scratch, implementing crystal-clear security protocols and modern encryption techniques for robust user verification.",
-    tags: ["Python", "Security", "Authentication", "Encryption"],
+    description: "A secure authentication system built from scratch, implementing crystal-clear security protocols and modern encryption techniques for robust user verification. Features multi-factor authentication and secure session management.",
+    tags: ["Python", "Security", "Authentication", "Encryption", "Cryptography"],
     icon: Lock,
     featured: true,
     gradient: "from-cyan-500 to-blue-500",
   },
   {
     title: "Indigenous LLM",
-    description: "An ongoing project to develop a homegrown Large Language Model, exploring transformer architectures and natural language processing from the ground up.",
-    tags: ["AI", "NLP", "Deep Learning", "Transformers"],
+    description: "An ambitious ongoing project to develop a homegrown Large Language Model, exploring transformer architectures and natural language processing from the ground up. Building AI solutions with an India-first approach.",
+    tags: ["AI", "NLP", "Deep Learning", "Transformers", "PyTorch"],
     icon: Bot,
     featured: true,
     gradient: "from-purple-500 to-pink-500",
@@ -94,7 +94,7 @@ const ProjectsSection = () => {
                   </p>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
@@ -104,30 +104,6 @@ const ProjectsSection = () => {
                       </span>
                     ))}
                   </div>
-
-                  {/* Links */}
-                  <div className="flex gap-4">
-                    <motion.a
-                      href="https://github.com/adityarajIITj"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                      whileHover={{ x: 3 }}
-                    >
-                      <Github className="w-4 h-4" />
-                      View Code
-                    </motion.a>
-                    {project.featured && (
-                      <motion.a
-                        href="#"
-                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                        whileHover={{ x: 3 }}
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        Learn More
-                      </motion.a>
-                    )}
-                  </div>
                 </div>
 
                 {/* Decorative corner */}
@@ -136,29 +112,6 @@ const ProjectsSection = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* GitHub CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-16 text-center"
-        >
-          <motion.a
-            href="https://github.com/adityarajIITj"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 glass rounded-xl hover:border-primary/50 transition-colors group"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Github className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-            <span className="text-muted-foreground group-hover:text-foreground transition-colors">
-              Explore more on GitHub
-            </span>
-            <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-          </motion.a>
-        </motion.div>
       </div>
     </section>
   );
