@@ -7,11 +7,10 @@ import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
-import ParticleField from "@/components/ParticleField";
+import JourneyPath from "@/components/JourneyPath";
 
 const Index = () => {
   useEffect(() => {
-    // Smooth scroll behavior for the entire page
     document.documentElement.style.scrollBehavior = "smooth";
     
     return () => {
@@ -20,14 +19,17 @@ const Index = () => {
   }, []);
 
   return (
-    <main className="min-h-screen bg-background overflow-x-hidden relative noise-overlay cursor-none">
+    <main className="min-h-screen bg-background overflow-x-hidden relative cursor-none">
       {/* Custom Cursor - Hidden on mobile */}
       <div className="hidden md:block">
         <CustomCursor />
       </div>
       
-      {/* Particle Background */}
-      <ParticleField />
+      {/* Grain overlay */}
+      <div className="grain-overlay" />
+      
+      {/* Journey path navigation */}
+      <JourneyPath />
       
       {/* Main Content */}
       <div className="relative z-10">
