@@ -46,7 +46,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <span className="font-mono text-sm tracking-wider text-foreground">
+            <span className="font-mono text-sm tracking-wider text-primary">
               AR<span className="text-muted-foreground">.</span>
             </span>
           </motion.a>
@@ -57,7 +57,7 @@ const Navbar = () => {
               <motion.a
                 key={link.name}
                 href={link.href}
-                className="relative text-sm text-muted-foreground hover:text-foreground transition-colors underline-effect"
+                className="relative text-sm text-muted-foreground hover:text-primary transition-colors underline-effect"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
@@ -75,11 +75,11 @@ const Navbar = () => {
             className="hidden md:flex items-center gap-2"
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-foreground opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-foreground" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
             </span>
             <span className="text-xs font-mono text-muted-foreground">
-              Available for work
+              Available
             </span>
           </motion.div>
 
@@ -108,7 +108,7 @@ const Navbar = () => {
                 <motion.a
                   key={link.name}
                   href={link.href}
-                  className="px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
+                  className="px-4 py-3 text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}

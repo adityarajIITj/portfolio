@@ -5,27 +5,24 @@ import { ArrowUpRight, Lock, Bot, Sparkles } from "lucide-react";
 const projects = [
   {
     title: "Crystal Auth System",
-    description: "A secure authentication framework built from scratch with modern encryption, multi-factor authentication, and secure session management. Designed with security-first principles.",
+    description: "A secure authentication framework built from scratch with modern encryption, multi-factor authentication, and secure session management.",
     tags: ["Python", "Cryptography", "Security"],
     icon: Lock,
     featured: true,
-    link: "#",
   },
   {
     title: "Indigenous LLM",
-    description: "An ambitious exploration into building a Large Language Model from the ground up. Understanding transformer architectures and NLP fundamentals through hands-on development.",
+    description: "An ambitious exploration into building a Large Language Model from the ground up. Understanding transformer architectures through hands-on development.",
     tags: ["PyTorch", "NLP", "Transformers"],
     icon: Bot,
     featured: true,
-    link: "#",
   },
   {
     title: "More Coming Soon",
-    description: "Constantly working on new experiments in AI, data science, and software development. Stay tuned for more.",
+    description: "Constantly working on new experiments in AI, data science, and software development.",
     tags: ["In Progress"],
     icon: Sparkles,
     featured: false,
-    link: null,
   },
 ];
 
@@ -35,6 +32,9 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-32 relative">
+      {/* Background accent */}
+      <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      
       <div className="section-container" ref={ref}>
         {/* Section indicator */}
         <motion.div
@@ -43,8 +43,8 @@ const ProjectsSection = () => {
           transition={{ duration: 0.6 }}
           className="flex items-center gap-4 mb-16"
         >
-          <span className="font-mono text-xs text-muted-foreground">03</span>
-          <div className="w-12 h-px bg-border" />
+          <span className="font-mono text-xs text-primary">03</span>
+          <div className="w-12 h-px bg-primary/50" />
           <span className="font-mono text-xs text-muted-foreground">Projects</span>
         </motion.div>
 
@@ -58,15 +58,15 @@ const ProjectsSection = () => {
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6">
             Selected
             <br />
-            <span className="text-muted-foreground">work.</span>
+            <span className="text-primary">work.</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed">
             A showcase of projects that represent my journey in AI, security, 
-            and software development. Each one is a learning experience.
+            and software development.
           </p>
         </motion.div>
 
-        {/* Projects grid */}
+        {/* Projects */}
         <div className="space-y-6">
           {projects.map((project, index) => (
             <motion.div
@@ -74,27 +74,25 @@ const ProjectsSection = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-              className={`group relative ${
-                project.link ? "cursor-pointer" : ""
-              }`}
+              className="group"
             >
-              <div className="p-8 md:p-10 border border-border rounded-2xl bg-card/30 hover:bg-card/50 hover:border-foreground/10 transition-all duration-500">
+              <div className="p-8 md:p-10 border border-border rounded-2xl bg-card/30 hover:bg-card/50 hover:border-primary/30 transition-all duration-500">
                 <div className="flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-12">
                   {/* Icon */}
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-xl border border-border flex items-center justify-center group-hover:border-foreground/20 transition-colors">
-                      <project.icon className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/40 transition-all">
+                      <project.icon className="w-5 h-5 text-primary" />
                     </div>
                   </div>
                   
                   {/* Content */}
                   <div className="flex-1">
                     <div className="flex items-start justify-between gap-4 mb-4">
-                      <h3 className="text-xl md:text-2xl font-medium text-foreground group-hover:text-foreground/80 transition-colors">
+                      <h3 className="text-xl md:text-2xl font-medium text-foreground group-hover:text-primary transition-colors">
                         {project.title}
                       </h3>
                       {project.featured && (
-                        <span className="flex-shrink-0 px-2 py-1 text-xs font-mono text-muted-foreground border border-border rounded">
+                        <span className="flex-shrink-0 px-2 py-1 text-xs font-mono text-primary border border-primary/30 rounded bg-primary/10">
                           Featured
                         </span>
                       )}
@@ -118,11 +116,9 @@ const ProjectsSection = () => {
                   </div>
                   
                   {/* Arrow */}
-                  {project.link && (
-                    <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <ArrowUpRight className="w-5 h-5 text-muted-foreground" />
-                    </div>
-                  )}
+                  <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <ArrowUpRight className="w-5 h-5 text-primary" />
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -140,7 +136,7 @@ const ProjectsSection = () => {
             href="https://github.com/adityarajIITj"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors underline-effect"
+            className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors underline-effect"
           >
             View all projects on GitHub
             <ArrowUpRight className="w-4 h-4" />

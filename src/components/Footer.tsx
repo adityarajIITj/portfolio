@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Github, Mail } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Left */}
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-            <span className="font-mono text-sm text-foreground">
+            <span className="font-mono text-sm text-primary">
               AR<span className="text-muted-foreground">.</span>
             </span>
             <span className="text-sm text-muted-foreground">
@@ -21,14 +21,29 @@ const Footer = () => {
           </div>
 
           {/* Center */}
-          <div className="text-sm text-muted-foreground font-mono">
-            Built with curiosity
+          <div className="flex items-center gap-4">
+            <motion.a
+              href="mailto:b25bs1020@iitj.ac.in"
+              className="p-2 text-muted-foreground hover:text-primary transition-colors"
+              whileHover={{ y: -2 }}
+            >
+              <Mail className="w-4 h-4" />
+            </motion.a>
+            <motion.a
+              href="https://github.com/adityarajIITj"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-muted-foreground hover:text-primary transition-colors"
+              whileHover={{ y: -2 }}
+            >
+              <Github className="w-4 h-4" />
+            </motion.a>
           </div>
 
           {/* Right */}
           <motion.button
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
             whileHover={{ y: -2 }}
           >
             Back to top
