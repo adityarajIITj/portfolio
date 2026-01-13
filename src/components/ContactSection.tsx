@@ -70,6 +70,9 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-32 relative">
+      {/* Background accent */}
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
+      
       <div className="section-container" ref={ref}>
         {/* Section indicator */}
         <motion.div
@@ -78,8 +81,8 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="flex items-center gap-4 mb-16"
         >
-          <span className="font-mono text-xs text-muted-foreground">04</span>
-          <div className="w-12 h-px bg-border" />
+          <span className="font-mono text-xs text-primary">04</span>
+          <div className="w-12 h-px bg-primary/50" />
           <span className="font-mono text-xs text-muted-foreground">Contact</span>
         </motion.div>
 
@@ -91,9 +94,7 @@ const ContactSection = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
           >
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6">
-              Let's work
-              <br />
-              <span className="text-muted-foreground">together.</span>
+              Let's <span className="text-primary">connect.</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-12">
               Interested in collaborating on AI projects, discussing ideas, 
@@ -114,18 +115,18 @@ const ContactSection = () => {
                       href={item.href}
                       target={item.href.startsWith("http") ? "_blank" : undefined}
                       rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="group flex items-center gap-4 py-3 border-b border-border hover:border-foreground/20 transition-colors"
+                      className="group flex items-center gap-4 py-3 border-b border-border hover:border-primary/30 transition-colors"
                     >
-                      <item.icon className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
+                      <item.icon className="w-4 h-4 text-primary" />
                       <div className="flex-1">
                         <p className="text-xs font-mono text-muted-foreground">{item.label}</p>
-                        <p className="text-foreground group-hover:text-foreground/80 transition-colors">{item.value}</p>
+                        <p className="text-foreground group-hover:text-primary transition-colors">{item.value}</p>
                       </div>
-                      <ArrowUpRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <ArrowUpRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:text-primary transition-all" />
                     </a>
                   ) : (
                     <div className="flex items-center gap-4 py-3 border-b border-border">
-                      <item.icon className="w-4 h-4 text-muted-foreground" />
+                      <item.icon className="w-4 h-4 text-primary" />
                       <div className="flex-1">
                         <p className="text-xs font-mono text-muted-foreground">{item.label}</p>
                         <p className="text-foreground">{item.value}</p>
@@ -145,14 +146,14 @@ const ContactSection = () => {
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-xs font-mono text-muted-foreground mb-2">
+                <label className="block text-xs font-mono text-primary mb-2">
                   Name
                 </label>
                 <input
                   type="text"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:border-foreground/30 transition-colors text-foreground placeholder:text-muted-foreground/50"
+                  className="w-full px-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:border-primary/50 focus:bg-primary/5 transition-all text-foreground placeholder:text-muted-foreground/50"
                   placeholder="Your name"
                   required
                   disabled={isSubmitting}
@@ -161,14 +162,14 @@ const ContactSection = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-muted-foreground mb-2">
+                <label className="block text-xs font-mono text-primary mb-2">
                   Email
                 </label>
                 <input
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:border-foreground/30 transition-colors text-foreground placeholder:text-muted-foreground/50"
+                  className="w-full px-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:border-primary/50 focus:bg-primary/5 transition-all text-foreground placeholder:text-muted-foreground/50"
                   placeholder="your@email.com"
                   required
                   disabled={isSubmitting}
@@ -177,14 +178,14 @@ const ContactSection = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-muted-foreground mb-2">
+                <label className="block text-xs font-mono text-primary mb-2">
                   Message
                 </label>
                 <textarea
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={5}
-                  className="w-full px-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:border-foreground/30 transition-colors resize-none text-foreground placeholder:text-muted-foreground/50"
+                  className="w-full px-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:border-primary/50 focus:bg-primary/5 transition-all resize-none text-foreground placeholder:text-muted-foreground/50"
                   placeholder="What would you like to discuss?"
                   required
                   disabled={isSubmitting}
@@ -195,7 +196,7 @@ const ContactSection = () => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full flex items-center justify-center gap-2 py-3 bg-foreground text-background rounded-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
+                className="w-full flex items-center justify-center gap-2 py-3 bg-primary text-primary-foreground rounded-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:shadow-lg hover:shadow-primary/25"
                 whileHover={{ scale: isSubmitting ? 1 : 1.01 }}
                 whileTap={{ scale: isSubmitting ? 1 : 0.99 }}
               >

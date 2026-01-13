@@ -6,34 +6,34 @@
 
 @layer base {
   :root {
-    --background: 0 0% 2%;
+    --background: 220 20% 4%;
     --foreground: 0 0% 98%;
-    --card: 0 0% 4%;
+    --card: 220 20% 7%;
     --card-foreground: 0 0% 98%;
-    --popover: 0 0% 4%;
+    --popover: 220 20% 7%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 2%;
-    --secondary: 0 0% 8%;
+    --primary: 200 100% 60%;
+    --primary-foreground: 220 20% 4%;
+    --secondary: 220 20% 12%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 55%;
-    --accent: 0 0% 14%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 200 80% 50%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14%;
-    --input: 0 0% 14%;
-    --ring: 0 0% 98%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 200 100% 60%;
     --radius: 0.75rem;
-    --sidebar-background: 0 0% 4%;
+    --sidebar-background: 220 20% 7%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 0 0% 98%;
-    --sidebar-primary-foreground: 0 0% 2%;
-    --sidebar-accent: 0 0% 14%;
+    --sidebar-primary: 200 100% 60%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 220 20% 12%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 14%;
-    --sidebar-ring: 0 0% 98%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 200 100% 60%;
   }
 }
 
@@ -41,7 +41,7 @@
   * { @apply border-border; }
   html { scroll-behavior: smooth; }
   body { @apply bg-background text-foreground antialiased; cursor: none; }
-  ::selection { @apply bg-foreground text-background; }
+  ::selection { @apply bg-primary/30 text-foreground; }
 }
 
 @layer components {
@@ -50,17 +50,20 @@
   .underline-effect { @apply relative; }
   .underline-effect::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-0 h-px bg-foreground transition-all duration-500;
+    @apply absolute bottom-0 left-0 w-0 h-px bg-primary transition-all duration-500;
   }
   .underline-effect:hover::after { @apply w-full; }
   .grain-overlay {
-    @apply pointer-events-none fixed inset-0 z-50 opacity-[0.015];
+    @apply pointer-events-none fixed inset-0 z-50 opacity-[0.02];
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+  .glow-line {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3), 0 0 40px hsl(var(--primary) / 0.1);
   }
 }
 
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: hsl(var(--primary) / 0.5); border-radius: 2px; }
 
 .cursor-none * { cursor: none !important; }

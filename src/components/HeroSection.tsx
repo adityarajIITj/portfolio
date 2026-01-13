@@ -30,10 +30,11 @@ const HeroSection = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Subtle grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(56,189,248,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(56,189,248,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />
       
-      {/* Gradient orb */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-muted/30 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
+      {/* Gradient orbs */}
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
 
       <motion.div
         className="section-container relative z-10"
@@ -45,7 +46,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="font-mono text-sm text-muted-foreground mb-6"
+            className="font-mono text-sm text-primary mb-6"
           >
             First Year @ IIT Jodhpur — Applied AI & Data Science
           </motion.p>
@@ -61,7 +62,7 @@ const HeroSection = () => {
             <span className="block text-muted-foreground mt-2">
               Building the future
               <br />
-              with intelligence.
+              <span className="text-primary">with intelligence.</span>
             </span>
           </motion.h1>
 
@@ -80,7 +81,7 @@ const HeroSection = () => {
               transition={{ duration: 0.5 }}
               className="font-mono text-muted-foreground"
             >
-              → {roles[roleIndex]}
+              <span className="text-primary">→</span> {roles[roleIndex]}
             </motion.div>
           </motion.div>
 
@@ -93,7 +94,7 @@ const HeroSection = () => {
           >
             <motion.a
               href="#projects"
-              className="group inline-flex items-center gap-3 px-6 py-3 bg-foreground text-background rounded-full font-medium text-sm transition-transform"
+              className="group inline-flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium text-sm transition-all hover:shadow-lg hover:shadow-primary/25"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -105,7 +106,7 @@ const HeroSection = () => {
               href="https://github.com/adityarajIITj"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-full text-sm text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-full text-sm text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -115,7 +116,7 @@ const HeroSection = () => {
             
             <motion.a
               href="mailto:b25bs1020@iitj.ac.in"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-full text-sm text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-full text-sm text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -138,8 +139,8 @@ const HeroSection = () => {
           transition={{ duration: 2, repeat: Infinity }}
           className="flex flex-col items-center gap-2 text-muted-foreground"
         >
-          <span className="text-xs font-mono tracking-wider">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-muted-foreground to-transparent" />
+          <span className="text-xs font-mono tracking-wider text-primary">Scroll</span>
+          <div className="w-px h-12 bg-gradient-to-b from-primary to-transparent" />
         </motion.div>
       </motion.div>
     </section>

@@ -26,6 +26,9 @@ const SkillsSection = () => {
 
   return (
     <section id="skills" className="py-32 relative">
+      {/* Background accent */}
+      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
+      
       <div className="section-container" ref={ref}>
         {/* Section indicator */}
         <motion.div
@@ -34,8 +37,8 @@ const SkillsSection = () => {
           transition={{ duration: 0.6 }}
           className="flex items-center gap-4 mb-16"
         >
-          <span className="font-mono text-xs text-muted-foreground">02</span>
-          <div className="w-12 h-px bg-border" />
+          <span className="font-mono text-xs text-primary">02</span>
+          <div className="w-12 h-px bg-primary/50" />
           <span className="font-mono text-xs text-muted-foreground">Skills</span>
         </motion.div>
 
@@ -50,17 +53,16 @@ const SkillsSection = () => {
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6">
               Technical
               <br />
-              <span className="text-muted-foreground">toolkit.</span>
+              <span className="text-primary">toolkit.</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
               A growing collection of technologies and methodologies. 
-              Focused on AI/ML, with a strong foundation in systems programming 
-              and open-source tools.
+              Focused on AI/ML, with a strong foundation in systems programming.
             </p>
             
             {/* Philosophy card */}
-            <div className="p-6 border border-border rounded-2xl bg-card/50">
-              <p className="text-sm text-muted-foreground font-mono mb-2">Philosophy</p>
+            <div className="p-6 border border-primary/20 rounded-2xl bg-primary/5">
+              <p className="text-sm text-primary font-mono mb-2">Philosophy</p>
               <p className="text-foreground">
                 "Learn by building. Every project is an opportunity to grow."
               </p>
@@ -77,7 +79,7 @@ const SkillsSection = () => {
                 transition={{ duration: 0.6, delay: 0.2 + categoryIndex * 0.1 }}
                 className="group"
               >
-                <h3 className="font-mono text-xs text-muted-foreground mb-4 uppercase tracking-wider">
+                <h3 className="font-mono text-xs text-primary mb-4 uppercase tracking-wider">
                   {category.title}
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -91,7 +93,7 @@ const SkillsSection = () => {
                         delay: 0.3 + categoryIndex * 0.1 + skillIndex * 0.05 
                       }}
                       whileHover={{ scale: 1.05, y: -2 }}
-                      className="px-4 py-2 text-sm border border-border rounded-full text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all cursor-default"
+                      className="px-4 py-2 text-sm border border-border rounded-full text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all cursor-default"
                     >
                       {skill}
                     </motion.span>
@@ -102,24 +104,23 @@ const SkillsSection = () => {
           </div>
         </div>
 
-        {/* Linux/Open Source note */}
+        {/* Open Source note */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-20 p-8 border border-border rounded-2xl bg-gradient-to-br from-card/80 to-transparent"
+          className="mt-20 p-8 border border-border rounded-2xl bg-gradient-to-br from-primary/5 to-transparent"
         >
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div>
-              <h3 className="text-xl font-medium mb-2">Open Source Advocate</h3>
+              <h3 className="text-xl font-medium mb-2">
+                <span className="text-primary">Open Source</span> Advocate
+              </h3>
               <p className="text-muted-foreground text-sm max-w-xl">
-                Believing in community-driven development. Open source isn't just code—it's 
-                a philosophy that democratizes technology and accelerates innovation.
+                Believing in community-driven development. Open source accelerates innovation.
               </p>
             </div>
-            <div className="font-mono text-6xl text-muted-foreground/20 select-none">
-              🐧
-            </div>
+            <div className="text-6xl">🐧</div>
           </div>
         </motion.div>
       </div>

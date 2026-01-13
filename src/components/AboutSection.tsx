@@ -22,8 +22,8 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="flex items-center gap-4 mb-16"
         >
-          <span className="font-mono text-xs text-muted-foreground">01</span>
-          <div className="w-12 h-px bg-border" />
+          <span className="font-mono text-xs text-primary">01</span>
+          <div className="w-12 h-px bg-primary/50" />
           <span className="font-mono text-xs text-muted-foreground">About</span>
         </motion.div>
 
@@ -35,9 +35,9 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
           >
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-8">
-              Driven by curiosity,
+              Driven by <span className="text-primary">curiosity</span>,
               <br />
-              <span className="text-muted-foreground">powered by code.</span>
+              powered by code.
             </h2>
             
             <div className="space-y-6 text-muted-foreground leading-relaxed">
@@ -49,8 +49,7 @@ const AboutSection = () => {
               <p>
                 Today, I channel that curiosity into building practical solutions—from 
                 secure authentication systems to exploring the frontiers of natural 
-                language processing. I believe in learning by doing, and every line 
-                of code is a step toward understanding.
+                language processing.
               </p>
               <p>
                 When I'm not coding, you'll find me diving into Linux systems, 
@@ -63,7 +62,7 @@ const AboutSection = () => {
               {["IIT Jodhpur '29", "AI/ML", "Linux", "Open Source"].map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 text-xs font-mono text-muted-foreground border border-border rounded-full"
+                  className="px-3 py-1 text-xs font-mono text-primary/80 border border-primary/30 rounded-full hover:bg-primary/10 transition-colors"
                 >
                   {tag}
                 </span>
@@ -79,7 +78,7 @@ const AboutSection = () => {
             className="relative"
           >
             {/* Timeline line */}
-            <div className="absolute left-0 top-0 bottom-0 w-px bg-border" />
+            <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-primary/50 to-transparent" />
             
             <div className="space-y-8">
               {milestones.map((milestone, index) => (
@@ -91,12 +90,12 @@ const AboutSection = () => {
                   className="relative pl-8 group"
                 >
                   {/* Timeline dot */}
-                  <div className="absolute left-0 top-2 -translate-x-1/2 w-2 h-2 rounded-full bg-muted-foreground/30 group-hover:bg-foreground transition-colors" />
+                  <div className="absolute left-0 top-2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary/50 group-hover:bg-primary group-hover:shadow-lg group-hover:shadow-primary/50 transition-all" />
                   
-                  <div className="font-mono text-xs text-muted-foreground mb-1">
+                  <div className="font-mono text-xs text-primary mb-1">
                     {milestone.year}
                   </div>
-                  <h3 className="font-medium text-foreground mb-1 group-hover:text-foreground/80 transition-colors">
+                  <h3 className="font-medium text-foreground mb-1 group-hover:text-primary transition-colors">
                     {milestone.event}
                   </h3>
                   <p className="text-sm text-muted-foreground">
