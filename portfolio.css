@@ -1,0 +1,63 @@
+/* Portfolio overrides — visual style preserved, Honey branding removed */
+
+/* The source hero uses black type over a video background. Keep the portfolio
+   headline readable while the remote video is loading or unavailable. */
+.framer-sg1hlr > h1 {
+  color: #f4f1ee !important;
+}
+
+/* The source About block used Framer word spans for its reveal. The portfolio
+   copy is injected as a single accessible text block, so keep it visible and
+   stable rather than letting the old span animation hide it on scroll. */
+.framer-21eoyi-container {
+  color: #f4f1ee !important;
+  font-family: "Suisse Int'l Regular", sans-serif !important;
+  font-size: clamp(2rem, 5vw, 4.5rem) !important;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Giant footer wordmark: hide Honey SVG, show Aditya in same Suisse style */
+[data-framer-name="honey footer"] img,
+[data-framer-name="honey footer"] [data-framer-background-image-wrapper="true"] {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+[data-framer-name="honey footer"] {
+  position: relative !important;
+}
+
+[data-framer-name="honey footer"]::after {
+  content: "Aditya";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Suisse Int'l", "Suisse Int'l Regular", sans-serif;
+  font-size: clamp(100px, 18vw, 468px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+  color: #fff;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Hide honey jar icon next to story CTA */
+[data-framer-name="noun-honey-6452526 1"] {
+  display: none !important;
+}
+
+/* Client logo marquee — not relevant for portfolio */
+[data-framer-name="Logos"],
+.framer-1k2x3v7,
+[data-framer-name="Logo"] img[alt="Avis"],
+.logo-marquee-wrap {
+  /* keep structure but we'll hide via JS if needed */
+}

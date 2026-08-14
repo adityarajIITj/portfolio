@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Suisse Int'l";
+  src: url("https://framerusercontent.com/assets/L3CN4MLCZQeuh9BjpUboN92cIXE.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Suisse Int'l";
+  src: url("https://framerusercontent.com/assets/1hjQNHJFGTyl9xNHER8Kk9vLGk.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Suisse Int'l";
+  src: url("https://framerusercontent.com/assets/Ald5la8CrtyErawh6tLZvKKZoI.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT Flexa Mono";
+  src: url("https://framerusercontent.com/assets/oecp3EK2vRvnJWC4mKH5gfS6fLY.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT Flexa Mono";
+  src: url("https://framerusercontent.com/assets/bytIjhUjhiCYHWtmBe4nrOXxwJM.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT Flexa Mono";
+  src: url("https://framerusercontent.com/assets/d9vA9iWoZdEzCbxyab94FaXldk.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "honey-replica",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Visual replica of withhoney.com (Framer mirror)",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3456",
+    "start": "npm run dev",
+    "preview": "vite preview --host 0.0.0.0 --port 3456",
+    "hand-coded": "vite --config hand-coded/vite.config.js"
+  },
+  "dependencies": {
+    "gsap": "^3.12.7",
+    "lenis": "^1.1.18"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
+}
