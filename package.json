@@ -2,7 +2,7 @@
   "name": "honey-replica",
   "version": "1.0.0",
   "private": true,
-  "description": "Visual replica of withhoney.com (Framer mirror)",
+  "description": "Aditya Raj's interactive AI and data science portfolio",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 3456",
     "start": "npm run dev",
